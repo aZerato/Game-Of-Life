@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>GameOfLife.js</title>
+	<meta charset="utf-8" />	
+
+	<script src="./scripts/extensions/Array.js"></script>
+
+	<script src="./scripts/objects/Cellule.js"></script>
+
+	<script src="./scripts/helpers/Matrix.js"></script>
+
+	<script src="./scripts/Main.js"></script>
+
+	<script>
+		var start = function() {
+			var elCanvas = document.getElementById('gameoflife');
+
+			var main = new Main(elCanvas, elCanvas.width, elCanvas.height);
+
+			main.init();
+
+			var btnS = document.getElementById('btnS');
+			btnS.addEventListener("click", function() {
+				main.NextStep();
+			});
+
+		};
+	</script>
+
+</head>
+<body onload="start()">
+	
+	<h1>
+		Game Of Life
+	<h1>
+
+	<div class="wrap">
+		<canvas id="gameoflife" width="150" height="150"></canvas>
+	</div>
+	
+	<button id="btnS">Next Step</button>
+
+</body>
+	<style>
+		body { margin: 0; padding: 0; height: 100%; width: 100%; font-family: Helvetica; }
+		h1, p { text-align:  center; }
+		h1 { font-size: 20px; }
+		p, a { font-size: 11px; }
+		.wrap { margin: 0 auto; }
+	</style>
+</html>
