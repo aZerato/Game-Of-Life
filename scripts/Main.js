@@ -8,6 +8,8 @@ var Main = (function() {
 
 		this.sizeY = sizeY / 10;
 
+		this.interval = null;
+
 		// canvas creation
 		this.ctx = $canvas.getContext('2d');
 
@@ -38,6 +40,20 @@ var Main = (function() {
 		}
     };
 
+	Main.prototype.Play = function() {
+		var self = this;
+
+		self.interval = setInterval(function() {
+			self.NextStep();
+		}, 250);
+	};
+
+	Main.prototype.Stop = function() {
+		var self = this;
+
+		clearInterval(self.interval);
+	};
+
 	Main.prototype.NextStep = function() {
 		var self = this;
 		
@@ -54,6 +70,7 @@ var Main = (function() {
 		if(changed == false)
 		{
 			alert('Evolution Max');
+			self.Stop();
 		}
 	};
 

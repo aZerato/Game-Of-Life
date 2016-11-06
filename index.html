@@ -24,6 +24,16 @@
 				main.NextStep();
 			});
 
+			var btnP = document.getElementById('btnP');
+			btnP.addEventListener("click", function() {
+				main.Play();
+			});
+
+			var btnA = document.getElementById('btnA');
+			btnA.addEventListener("click", function() {
+				main.Stop();
+			});
+
 		};
 	</script>
 
@@ -38,7 +48,7 @@
 		<canvas id="gameoflife" width="600" height="600"></canvas>
 	</div>
 	
-	<button id="btnS">Next Step</button>
+	<button id="btnS">Next Step</button><button id="btnP">Play</button><button id="btnA">Stop</button>
 
 </body>
 	<style>
