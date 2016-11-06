@@ -11,7 +11,7 @@ var Matrix = (function() {
 
 			for(var j = 0; j < y; j++)
 			{
-				this.arr[i][j] = new Cellule(i, j, 4, this.arr, ctx);
+				this.arr[i][j] = new Cellule(i, j, 0, this.arr, ctx);
 			}
 		}
 		return this.arr;

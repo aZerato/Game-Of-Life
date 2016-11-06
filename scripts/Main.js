@@ -17,7 +17,7 @@ var Main = (function() {
 	Main.prototype.init = function() {
 		var self = this;
 
-        for(var i = 0; i < 10; i++) {
+        for(var i = 0; i < 300; i++) {
             self.initCellules();
             i++;
         }
@@ -31,7 +31,7 @@ var Main = (function() {
         var celluleX = Math.floor((Math.random() * (self.sizeX - 1)) + 1);
         var celluleY = Math.floor((Math.random() * (self.sizeY - 1)) + 1);
 
-        self.cellules[celluleX][celluleY] = new Cellule(celluleX, celluleY, 0, self.cellules, self.ctx);
+        self.cellules[celluleX][celluleY] = new Cellule(celluleX, celluleY, 1, self.cellules, self.ctx);
     };
 
 	Main.prototype.NextStep = function() {
